@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "brainy-trainy-mobile",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

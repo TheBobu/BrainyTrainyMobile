@@ -1,0 +1,7 @@
+{
+  "name": "brainy-trainy-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
