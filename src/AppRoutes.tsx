@@ -8,40 +8,59 @@ import {
     IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { homeOutline, personOutline } from 'ionicons/icons';
+import { homeOutline, logInOutline, peopleOutline, personOutline } from 'ionicons/icons';
 import React from 'react'
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Login from './pages/Auth/Login';
+import { useAuth } from './hooks/Auth.hooks';
+import Register from './pages/Auth/Register';
 
 const AppRoutes: React.FC = () => {
+    const { isAuthenticated } = useAuth();
     return (
         <IonReactRouter>
             <IonTabs>
                 <IonRouterOutlet>
                     <Route exact path="/home">
-                        <Home />
+                        {isAuthenticated ? <Home /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/profile">
-                        <Profile />
+                        {isAuthenticated ? <Profile /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/login">
-                        <Login />
+                        {!isAuthenticated ? <Login /> : <Redirect to="/" />}
+                    </Route>
+                    <Route exact path="/register">
+                        {!isAuthenticated ? <Register /> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/">
                         <Redirect to="/home" />
                     </Route>
                 </IonRouterOutlet>
-                <IonTabBar slot="bottom">
-                    <IonTabButton tab="home" href="/home">
-                        <IonIcon icon={homeOutline} />
-                        <IonLabel>Home</IonLabel>
-                    </IonTabButton>
-                    <IonTabButton tab="profile" href="/profile">
-                        <IonIcon icon={personOutline} />
-                        <IonLabel>Profile</IonLabel>
-                    </IonTabButton>
-                </IonTabBar>
+                {
+                    isAuthenticated ?
+                        <IonTabBar slot="bottom">
+                            <IonTabButton tab="home" href="/home">
+                                <IonIcon icon={homeOutline} />
+                                <IonLabel>Home</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="profile" href="/profile">
+                                <IonIcon icon={personOutline} />
+                                <IonLabel>Profile</IonLabel>
+                            </IonTabButton>
+                        </IonTabBar>
+                        : <IonTabBar slot="bottom">
+                            <IonTabButton tab="login" href="/login">
+                                <IonIcon icon={logInOutline} />
+                                <IonLabel>Log In</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="register" href="/register">
+                                <IonIcon icon={peopleOutline} />
+                                <IonLabel>Register</IonLabel>
+                            </IonTabButton>
+                        </IonTabBar>
+                }
             </IonTabs>
         </IonReactRouter>
     )

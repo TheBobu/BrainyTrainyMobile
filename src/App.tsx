@@ -21,10 +21,21 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import AppRoutes from './AppRoutes';
+import { AuthProvider } from './AuthProvider';
+import { AxiosProvider } from './context/AxiosContext';
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient();
 
 const App: React.FC = () => (
   <IonApp>
-    <AppRoutes />
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AxiosProvider>
+          <AppRoutes />
+        </AxiosProvider>
+      </QueryClientProvider>
+    </AuthProvider>
   </IonApp>
 );
 
