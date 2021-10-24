@@ -19,7 +19,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const login = React.useCallback(
         async (formData: LoginModel) => {
             axios
-                .post(`${process.env.REACT_APP_BASE_URL}/User/Login`, formData)
+                .post(`${process.env.REACT_APP_BASE_URL}/Account/Login`, formData)
                 .then((result) => {
                     setUserData(result.data as UserContextModel);
                     setIsAuthenticated(true);

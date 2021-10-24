@@ -1,10 +1,18 @@
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
+import { useAuth } from '../../hooks/Auth.hooks';
+import { LoginModel } from '../../models/Login.model';
 import './login.css'
 
 const Login: React.FC = () => {
-    const [email, setEmail] = useState<string>();
-    const [password, setPassword] = useState<string>();
+    const [credentials, setCredentials] = useState<LoginModel>({ email: '', password: '' });
+
+    const { login } = useAuth();
+
+    const submitForm = () => {
+        login(credentials);
+    }
+
     return (
         <IonPage>
             <IonContent fullscreen>
@@ -12,15 +20,29 @@ const Login: React.FC = () => {
                     <IonCardHeader>
                         <IonCardTitle>Login</IonCardTitle>
                     </IonCardHeader>
-                
-                    <IonCardContent >
+
+                    <IonCardContent>
                         <IonItem>
-                            <IonInput type='email' value={email} placeholder="Enter email" onIonChange={e => setEmail(e.detail.value!)}></IonInput>
+                            <IonInput type='email' value={credentials.email} placeholder="Enter email" required onIonChange={e =>
+                                setCredentials(
+                                    {
+                                        email: e.detail.value!,
+                                        password: credentials.password
+                                    }
+                                )
+                            } />
+
                         </IonItem>
                         <IonItem>
-                            <IonInput type='password' value={password} placeholder="Enter password" onIonChange={e => setPassword(e.detail.value!)}></IonInput>
+                            <IonInput type='password' value={credentials.password} placeholder="Enter password" required onIonChange={e =>
+                                setCredentials(
+                                    {
+                                        email: credentials.email,
+                                        password: e.detail.value!
+                                    }
+                                )} />
                         </IonItem>
-                        <IonButton className='login-btn' color="primary">Login</IonButton>
+                        <IonButton className='login-btn' color="primary" onClick={() => submitForm()}>Login</IonButton>
                     </IonCardContent>
                 </IonCard>
             </IonContent>
@@ -29,3 +51,5 @@ const Login: React.FC = () => {
 }
 
 export default Login;
+
+
