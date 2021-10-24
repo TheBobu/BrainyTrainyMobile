@@ -1,0 +1,97 @@
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    background-color: #3c3c46 !important;
+    margin-top:20px;
+    font-size: 18px;
+}
+
+
+.user-card .card-block {
+    text-align: center;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.user-card .card-block .user-image {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+    width: 110px;
+    height: 110px;
+}
+
+.user-card .card-block .user-image img {
+    z-index: 20;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+        width: 100px;
+    height: 100px;
+}
+
+.img-radius {
+    border-radius: 50%;
+}
+
+.text-muted {
+    color: #fafafa!important;
+}
+
+.user-card .card-block  {
+    color: #fff;
+}
+
+.bg-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+    border-radius:5px;
+    padding: 5px 10px 5px 10px;
+}
+
+
+.user-card .card-block .user-image:before {
+    bottom: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.user-card .card-block .user-image:after, .user-card .card-block .user-image:before {
+    content: "";
+    width: 100%;
+    height: 48%;
+    border: 2px solid #4099ff;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+.user-card .card-block .user-image:after {
+    top: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.user-card .card-block .user-image:after, .user-card .card-block .user-image:before {
+    content: "";
+    width: 100%;
+    height: 48%;
+    border: 2px solid #4099ff;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+.iconProfile{
+    font-size:25px;
+}
+
+.button-emergency{
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+
+}
