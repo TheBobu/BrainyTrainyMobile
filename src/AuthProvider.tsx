@@ -4,6 +4,7 @@ import { UserContextModel } from './models/User.model';
 import { LoginModel } from './models/Login.model';
 import useLocalStorage from './hooks/LocalStorage.hooks';
 import { authContext } from './context/AuthContext';
+import { useHistory } from 'react-router';
 
 
 export const AuthProvider: React.FC = ({ children }) => {
