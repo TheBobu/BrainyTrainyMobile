@@ -4,6 +4,7 @@ import { UserContextModel } from './models/User.model';
 import { LoginModel } from './models/Login.model';
 import useLocalStorage from './hooks/LocalStorage.hooks';
 import { authContext } from './context/AuthContext';
+import { useHistory } from 'react-router';
 
 
 export const AuthProvider: React.FC = ({ children }) => {
@@ -19,7 +20,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const login = React.useCallback(
         async (formData: LoginModel) => {
             axios
-                .post(`${process.env.REACT_APP_BASE_URL}/User/Login`, formData)
+                .post(`${process.env.REACT_APP_BASE_URL}/Account/Login`, formData)
                 .then((result) => {
                     setUserData(result.data as UserContextModel);
                     setIsAuthenticated(true);

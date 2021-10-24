@@ -8,13 +8,14 @@ import {
     IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { homeOutline, logInOutline, peopleOutline, personOutline } from 'ionicons/icons';
+import { homeOutline, logInOutline, logOutOutline, peopleOutline, personOutline } from 'ionicons/icons';
 import React from 'react'
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Login from './pages/Auth/Login';
 import { useAuth } from './hooks/Auth.hooks';
 import Register from './pages/Auth/Register';
+import Logout from './pages/Auth/Logout';
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
@@ -34,6 +35,9 @@ const AppRoutes: React.FC = () => {
                     <Route exact path="/register">
                         {!isAuthenticated ? <Register /> : <Redirect to="/" />}
                     </Route>
+                    <Route exact path="/logout">
+                        {isAuthenticated ? <Logout />: <Redirect to="/" />}
+                    </Route>
                     <Route exact path="/">
                         <Redirect to="/home" />
                     </Route>
@@ -48,6 +52,10 @@ const AppRoutes: React.FC = () => {
                             <IonTabButton tab="profile" href="/profile">
                                 <IonIcon icon={personOutline} />
                                 <IonLabel>Profile</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="logout" href="/logout">
+                                <IonIcon icon={logOutOutline} />
+                                <IonLabel>Log Out</IonLabel>
                             </IonTabButton>
                         </IonTabBar>
                         : <IonTabBar slot="bottom">
