@@ -33,12 +33,14 @@ const Register: React.FC = () => {
                 present({
                     buttons: [{ text: 'hide', handler: () => { dismiss(); } }],
                     message: 'Account created successfully!',
+                    duration: 5000,
                 });
             },
             onError: () => {
                 present({
                     buttons: [{ text: 'hide', handler: () => { dismiss() } }],
                     message: 'Something went wrong!',
+                    duration: 5000,
                 });
             }
         }
