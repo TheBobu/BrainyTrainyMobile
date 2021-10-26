@@ -1,17 +1,17 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
-const Home:React.FC = () => {
+const Puzzle:React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Home</IonTitle>
+                    <IonTitle>Puzzle</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">Home</IonTitle>
+                        <IonTitle size="large">Puzzle</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 
@@ -20,4 +20,4 @@ const Home:React.FC = () => {
         )
 }
 
-export default Home;
+export default Puzzle;
