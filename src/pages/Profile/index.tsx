@@ -5,7 +5,6 @@ import {
   IonTitle,
   IonToolbar,
   IonIcon,
-  IonButton,
 } from "@ionic/react";
 import { callOutline, homeOutline, peopleCircleOutline } from "ionicons/icons";
 
