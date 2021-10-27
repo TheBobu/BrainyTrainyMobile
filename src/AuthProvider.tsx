@@ -1,10 +1,11 @@
 import React from 'react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { UserContextModel } from './models/User.model';
 import { LoginModel } from './models/Login.model';
 import useLocalStorage from './hooks/LocalStorage.hooks';
 import { authContext } from './context/AuthContext';
-import { useHistory } from 'react-router';
+import { useMutation } from 'react-query';
+import { useIonToast } from '@ionic/react';
 
 
 export const AuthProvider: React.FC = ({ children }) => {
@@ -16,8 +17,27 @@ export const AuthProvider: React.FC = ({ children }) => {
         'isAuthenticated',
         false
     );
+    const [present, dismiss] = useIonToast();
+    
+    const {mutate:login ,isLoading} = useMutation(
+        (formData:LoginModel)=>
+            axios.post(`${process.env.REACT_APP_BASE_URL}/Account/Login`, formData)
+        ,{
+            onSuccess:(result)=>{
+                setUserData(result.data as UserContextModel);
+                setIsAuthenticated(true);
+            },
+            onError: () => {
+                present({
+                    buttons: [{ text: 'hide', handler: () => { dismiss() } }],
+                    message: 'Something went wrong!',
+                    duration: 5000,
+                });
+            }
+        }
+    )
 
-    const login = React.useCallback(
+    /* const login = React.useCallback(
         async (formData: LoginModel) => {
             axios
                 .post(`${process.env.REACT_APP_BASE_URL}/Account/Login`, formData)
@@ -32,7 +52,7 @@ export const AuthProvider: React.FC = ({ children }) => {
                 });
         },
         [setIsAuthenticated, setUserData]
-    );
+    ); */
 
     const logout = React.useCallback(async () => {
         setUserData({} as UserContextModel);
@@ -46,6 +66,7 @@ export const AuthProvider: React.FC = ({ children }) => {
                 login,
                 logout,
                 isAuthenticated,
+                isLoading
             }}
         >
             {children}

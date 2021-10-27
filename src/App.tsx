@@ -29,13 +29,13 @@ const queryClient = new QueryClient();
 
 const App: React.FC = () => (
   <IonApp>
-    <AuthProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
         <AxiosProvider>
           <AppRoutes />
         </AxiosProvider>
-      </QueryClientProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   </IonApp>
 );
 

@@ -27,7 +27,7 @@ const AppRoutes: React.FC = () => {
                         {!isAuthenticated ? <Home /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/profile">
-                        {!isAuthenticated ? <Profile /> : <Redirect to="/login" />}
+                        {isAuthenticated ? <Profile /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/login">
                         {!isAuthenticated ? <Login /> : <Redirect to="/" />}

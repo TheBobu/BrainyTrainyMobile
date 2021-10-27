@@ -7,6 +7,7 @@ export interface AuthContext {
     login: (formData: LoginModel) => void;
     logout: () => void;
     isAuthenticated: boolean;
+    isLoading: boolean;
 }
 
 export const authContext = createContext<AuthContext>({} as AuthContext)
