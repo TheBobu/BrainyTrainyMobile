@@ -1,6 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import MatchingGame from './MatchingGame';
+import './matching.css'
 
-const Matching:React.FC = () => {
+const Matching: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -14,10 +16,10 @@ const Matching:React.FC = () => {
                         <IonTitle size="large">Matching</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                
+                <MatchingGame />
             </IonContent>
         </IonPage>
-        )
+    )
 }
 
 export default Matching;
