@@ -25,7 +25,7 @@ const AppRoutes: React.FC = () => {
             <IonTabs>
                 <IonRouterOutlet>
                     <Route exact path="/home">
-                        {!isAuthenticated ? <Home /> : <Redirect to="/login" />}
+                        {isAuthenticated ? <Home /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/profile">
                         {isAuthenticated ? <Profile /> : <Redirect to="/login" />}

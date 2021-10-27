@@ -6,7 +6,7 @@ import {
   IonIcon,
   IonRow,
 } from "@ionic/react";
-import { extensionPuzzle, extensionPuzzleOutline, gridOutline, helpOutline, homeOutline, listOutline, personOutline, shapesOutline } from "ionicons/icons";
+import { extensionPuzzleOutline, gridOutline, helpOutline, homeOutline, listOutline, personOutline, shapesOutline } from "ionicons/icons";
 
 const HomeCards: React.FC = () => (
   <IonContent >
@@ -19,21 +19,23 @@ const HomeCards: React.FC = () => (
           </IonCard>
         </IonCol>
         <IonCol>
-          <IonCard className="homeCard-white text-dark">
-            <IonIcon className="pr-1" icon={shapesOutline} />
-            <p>MATCHING </p>
-          </IonCard>
+          <a href='/matching'>
+            <IonCard className="homeCard-white text-dark">
+              <IonIcon className="pr-1" icon={shapesOutline} />
+              <p>MATCHING </p>
+            </IonCard>
+          </a>
         </IonCol>
       </IonRow>
       <IonRow>
         <IonCol >
-        <IonCard className="homeCard-white text-dark">
+          <IonCard className="homeCard-white text-dark">
             <IonIcon className="pr-1 text-dark" icon={helpOutline} />
             <p>QUIZ </p>
           </IonCard>
         </IonCol>
         <IonCol >
-        <IonCard className="homeCard-blue text-white">
+          <IonCard className="homeCard-blue text-white">
             <IonIcon className="pr-1" icon={extensionPuzzleOutline} />
             <p>PUZZLE </p>
           </IonCard>

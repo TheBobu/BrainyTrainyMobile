@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import HomeCards from './HomeCards';
 import "./homeCards.css";
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -16,10 +16,10 @@ const Home:React.FC = () => {
                         <IonTitle size="large">Home</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                <HomeCards></HomeCards>
+                <HomeCards />
             </IonContent>
         </IonPage>
-        )
+    )
 }
 
 export default Home;
