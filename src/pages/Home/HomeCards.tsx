@@ -13,10 +13,12 @@ const HomeCards: React.FC = () => (
     <IonGrid>
       <IonRow>
         <IonCol >
-          <IonCard className="homeCard-blue text-white">
-            <IonIcon className="pr-1 " icon={personOutline} />
-            <p>PROFILE</p>
-          </IonCard>
+          <a href='/profile'>
+            <IonCard className="homeCard-blue text-white">
+              <IonIcon className="pr-1 " icon={personOutline} />
+              <p>PROFILE</p>
+            </IonCard>
+          </a>
         </IonCol>
         <IonCol>
           <a href='/matching'>
