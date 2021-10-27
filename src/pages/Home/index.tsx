@@ -1,4 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import HomeCards from './HomeCards';
+import "./homeCards.css";
 
 const Home:React.FC = () => {
     return (
@@ -14,7 +16,7 @@ const Home:React.FC = () => {
                         <IonTitle size="large">Home</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                
+                <HomeCards></HomeCards>
             </IonContent>
         </IonPage>
         )

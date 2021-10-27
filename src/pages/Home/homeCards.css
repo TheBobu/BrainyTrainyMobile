@@ -1,0 +1,25 @@
+.homeCard-blue{
+    background-color:#4099ff;
+    min-height: 150px;
+    min-width: 100%;
+    text-align: center;
+    padding-top: 12% !important;
+    font-size: 7em;
+}
+
+.homeCard-white{
+    background-color:#fafafa;
+    min-height: 150px;
+    min-width: 100%;
+    text-align: center;
+    padding-top: 12% !important;
+    font-size: 7em;
+}
+
+p{
+font-size: 0.2em! important;
+}
+
+.hydrated{
+    margin:0px !important;
+}
