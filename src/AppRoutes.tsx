@@ -17,6 +17,7 @@ import { useAuth } from './hooks/Auth.hooks';
 import Register from './pages/Auth/Register';
 import Logout from './pages/Auth/Logout';
 import Matching from './pages/Games/Matching';
+import TodoList from './pages/TodoList';
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
@@ -26,6 +27,9 @@ const AppRoutes: React.FC = () => {
                 <IonRouterOutlet>
                     <Route exact path="/home">
                         {isAuthenticated ? <Home /> : <Redirect to="/login" />}
+                    </Route>
+                    <Route exact path="/todolist">
+                        {isAuthenticated ? <TodoList /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/profile">
                         {isAuthenticated ? <Profile /> : <Redirect to="/login" />}

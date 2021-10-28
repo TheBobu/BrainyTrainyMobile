@@ -51,10 +51,12 @@ const HomeCards: React.FC = () => (
           </IonCard>
         </IonCol>
         <IonCol>
-          <IonCard className="homeCard-white text-dark">
-            <IonIcon className="pr-3 " icon={listOutline} />
-            <p>TO DO LIST </p>
-          </IonCard>
+          <a href='todolist'>
+            <IonCard className="homeCard-white text-dark">
+              <IonIcon className="pr-3 " icon={listOutline} />
+              <p>TO DO LIST </p>
+            </IonCard>
+          </a>
         </IonCol>
       </IonRow>
     </IonGrid>
