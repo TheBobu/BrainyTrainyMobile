@@ -14,15 +14,11 @@ const StatsComponent: React.FC = () => {
     () => authAxios.get<Records[]>(`GameHistory/All/${userData?.user.userId}`)
   );
 
-  const slides = data?.data.map((item, key) => {
-    let dates = item.records.map((item) => {
-      return (
-        new Date(item.addedDate).getDate() +
-        "/" +
-        new Date(item.addedDate).getMonth()
-      );
-    });
-    var unique = dates.filter((v, i, a) => a.indexOf(v) === i);
+    const slides = data?.data.map((item, key) => {
+        let dates = item.records.map((item) => {
+            return new Date(item.addedDate).getDate() + "/" + (new Date(item.addedDate).getMonth() < 10 ? "0" + new Date(item.addedDate).getMonth() : new Date(item.addedDate).getMonth())
+        })
+        var unique = dates.filter((v, i, a) => a.indexOf(v) === i);
 
     for (let i in dates) {
       item.records[i].addedDate = dates[i];
