@@ -1,6 +1,4 @@
-import React from "react";
 import ToDoForm from "../ToDoForm";
-
 import "./NewToDo.css";
 
 type Props = {

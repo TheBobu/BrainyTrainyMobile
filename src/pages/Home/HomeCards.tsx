@@ -6,7 +6,7 @@ import {
   IonIcon,
   IonRow,
 } from "@ionic/react";
-import { extensionPuzzleOutline, gridOutline, helpOutline, listOutline, personOutline, podiumOutline, shapesOutline, statsChartOutline } from "ionicons/icons";
+import { helpOutline, listOutline, personOutline, podiumOutline, shapesOutline, statsChartOutline } from "ionicons/icons";
 
 const HomeCards: React.FC = () => (
   <IonContent >

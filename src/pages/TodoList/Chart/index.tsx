@@ -5,8 +5,8 @@ import "./ChartBar.css";
 const Chart = (props: any) => {
   const dataPointValues = props.dataPoints.map(
     (dataPoint: { value: any }) => dataPoint.value
-  ); // we transform a data point object to  a brand new array  of numbers.
-  const totalMaximum = Math.max(...dataPointValues); // we split that array in stand-alone arguments because the max funtion wants values like ( 1,2,3)
+  ); 
+  const totalMaximum = Math.max(...dataPointValues);
   return (
     <div className="chart">
       {props.dataPoints.map((dataPoint: { label: any; value: any }) => (

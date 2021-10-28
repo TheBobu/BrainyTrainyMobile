@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./ToDosFilter.css";
 
 const ToDosFilter = (props: any) => {

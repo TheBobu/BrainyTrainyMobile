@@ -1,24 +1,18 @@
 import {
-  IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonContent,
-  IonHeader,
   IonInput,
   IonItem,
   IonPage,
-  IonTitle,
-  IonToolbar,
   useIonToast,
 } from "@ionic/react";
 import { useState } from "react";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router";
 import FullscreenSpinner from "../../components/FullscreenSpinner";
 import { useAxios } from "../../context/AxiosContext";
 import { UserModel } from "../../models/User.model";
-import "./register.css";
+import "./auth.css";
 
 const Register: React.FC = () => {
   const [present, dismiss] = useIonToast();
@@ -93,26 +87,21 @@ const Register: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Register</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-        <IonCard className="registerPage">
-          <IonHeader collapse="condense">
-            <IonCardHeader>
-              <IonTitle size="large">Register</IonTitle>
-            </IonCardHeader>
-          </IonHeader>
+        <IonCard>
+          <div className="Header">
+            <div className="title">Welcome!</div>
+            <div className="subtitle">Let's create your account!</div>
+          </div>
 
           {isLoading ? (
             <FullscreenSpinner />
           ) : (
             <form>
-              <IonCardContent className="cardContent">
+              <IonCardContent className="input-container ic1">
                 <IonItem>
                   <IonInput
+                    className="input"
                     type="email"
                     value={user.email}
                     required
@@ -125,8 +114,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="text"
                     value={user.info.fullName}
                     required
@@ -142,8 +132,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="number"
                     value={user.info.age}
                     required
@@ -159,8 +150,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="text"
                     value={user.info.address}
                     required
@@ -176,8 +168,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="text"
                     value={user.info.contactPersonName}
                     placeholder="Enter a contact person's name"
@@ -192,8 +185,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="text"
                     value={user.info.contactPersonNumber}
                     placeholder="Enter a contact person's phone"
@@ -208,8 +202,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="password"
                     value={user.password}
                     required
@@ -222,8 +217,9 @@ const Register: React.FC = () => {
                     }
                   />
                 </IonItem>
-                <IonItem>
+                <IonItem className="input-container">
                   <IonInput
+                    className="input"
                     type="password"
                     value={confirmPassword}
                     required
@@ -232,7 +228,8 @@ const Register: React.FC = () => {
                   />
                 </IonItem>
 
-                <IonButton
+                <IonItem>
+                  <button
                   className="loginBtn"
                   color="primary"
                   onClick={(e) => {
@@ -241,7 +238,8 @@ const Register: React.FC = () => {
                   }}
                 >
                   Register
-                </IonButton>
+                  </button>
+                </IonItem>
               </IonCardContent>
             </form>
           )}

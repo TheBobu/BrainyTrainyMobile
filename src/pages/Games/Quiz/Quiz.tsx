@@ -3,30 +3,30 @@ import "./Quiz.css";
 const Quiz: React.FC = () => {
   const questions = [
     {
-      questionText: "Care este culoarea preferata a Andreei",
+      questionText: "Unde locuiesti?",
       answerOptions: [
-        { answerText: "Black", isCorrect: false },
-        { answerText: "Yellow", isCorrect: false },
-        { answerText: "Purple", isCorrect: true },
-        { answerText: "Orange", isCorrect: false },
+        { answerText: "Sibiu", isCorrect: false },
+        { answerText: "Iasi", isCorrect: false },
+        { answerText: "Cluj", isCorrect: true },
+        { answerText: "China", isCorrect: false },
       ],
     },
     {
-      questionText: "Who is president of US?",
+      questionText: "Care este numele copilului tau?",
       answerOptions: [
-        { answerText: "Biden", isCorrect: true },
-        { answerText: "Elon Musk", isCorrect: false },
-        { answerText: "Bill Gates", isCorrect: false },
-        { answerText: "Trump", isCorrect: false },
+        { answerText: "Alin", isCorrect: true },
+        { answerText: "Matias", isCorrect: false },
+        { answerText: "Robert", isCorrect: false },
+        { answerText: "Daniel", isCorrect: false },
       ],
     },
     {
-      questionText: "The react was created by which company?",
+      questionText: "Cati ani ai?",
       answerOptions: [
-        { answerText: "Facebook", isCorrect: true },
-        { answerText: "Intel", isCorrect: false },
-        { answerText: "Amazon", isCorrect: false },
-        { answerText: "Microsoft", isCorrect: false },
+        { answerText: "65", isCorrect: true },
+        { answerText: "43", isCorrect: false },
+        { answerText: "78", isCorrect: false },
+        { answerText: "74", isCorrect: false },
       ],
     },
   ];

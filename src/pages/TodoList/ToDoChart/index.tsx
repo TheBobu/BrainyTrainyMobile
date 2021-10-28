@@ -1,4 +1,3 @@
-import React from "react";
 import Chart from "../Chart";
 
 const ToDoChart = (props: any) => {
@@ -17,10 +16,9 @@ const ToDoChart = (props: any) => {
     { label: "Dec", value: 0 },
   ];
 
-  //after this for, the chartDataPoints won't have 0's but will have the summed up values of a month
   for (const toDo of props.toDos) {
-    const expenseMonth = toDo.date.getMonth(); //that date staring at 0. Jan == 0
-    chartDataPoints[expenseMonth].value += 1; //increasing the value of a given month by toDo amount
+    const expenseMonth = toDo.date.getMonth();
+    chartDataPoints[expenseMonth].value += 1;
   }
   return <Chart dataPoints={chartDataPoints}></Chart>;
 };

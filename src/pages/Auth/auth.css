@@ -1,0 +1,54 @@
+.input-container {
+  position: relative;
+  width: 100%;
+}
+.input {
+  background-color: #303245 !important;
+  border-radius: 10px !important;
+  color: #fafafa !important;
+  font-size: 20px;
+  padding: 4px 20px 0 !important;
+  margin-bottom: 10% !important;
+}
+.ic1 {
+  margin-top: 40px;
+}
+.title {
+  color: #fafafa;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.Header {
+  margin-left: 8%;
+}
+.subtitle {
+  color: #fafafa;
+  font-family: sans-serif;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10%;
+}
+
+.IonCardPos {
+  margin-top: 40% !important;
+}
+
+.loginBtn {
+  background-color: #4099ff;
+  border-radius: 12px;
+  color: #fafafa;
+  font-size: 25px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px !important;
+  width: 100%;
+  padding: 4px 20px 0 !important;
+}
+
+ion-item {
+  --highlight-color-focused: none !important;
+}

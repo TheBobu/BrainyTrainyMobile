@@ -1,24 +1,16 @@
 import {
-  IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonContent,
-  IonHeader,
   IonInput,
   IonItem,
   IonPage,
-  IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import { useState } from "react";
-import { useMutation } from "react-query";
 import FullscreenSpinner from "../../components/FullscreenSpinner";
 import { useAuth } from "../../hooks/Auth.hooks";
 import { LoginModel } from "../../models/Login.model";
-import "./login.css";
+import "./auth.css";
 
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState<LoginModel>({
@@ -38,49 +30,55 @@ const Login: React.FC = () => {
         {isLoading ? (
           <FullscreenSpinner />
         ) : (
-          <IonCard className="contentWrap">
-            <IonCardHeader>
-              <IonCardTitle>Login</IonCardTitle>
-            </IonCardHeader>
-
-            <IonCardContent className="cardContent">
-              <IonItem>
-                <IonInput
-                  type="email"
-                  value={credentials.email}
-                  placeholder="Enter email"
-                  required
-                  onIonChange={(e) =>
-                    setCredentials({
-                      email: e.detail.value!,
-                      password: credentials.password,
-                    })
-                  }
-                />
-              </IonItem>
-              <IonItem>
-                <IonInput
-                  type="password"
-                  value={credentials.password}
-                  placeholder="Enter password"
-                  required
-                  onIonChange={(e) =>
-                    setCredentials({
-                      email: credentials.email,
-                      password: e.detail.value!,
-                    })
-                  }
-                />
-              </IonItem>
-              <IonButton
-                className="loginBtn"
-                color="primary"
-                onClick={() => submitForm()}
-              >
-                Login
-              </IonButton>
-            </IonCardContent>
-          </IonCard>
+          <>
+            <IonCard className="IonCardPos">
+              <div className="Header">
+                <div className="title">Welcome back!</div>
+                <div className="subtitle">Login</div>
+              </div>
+              <IonCardContent className="input-container ic1">
+                <IonItem>
+                  <IonInput
+                    className="input"
+                    type="email"
+                    value={credentials.email}
+                    placeholder="Enter email"
+                    required
+                    onIonChange={(e) =>
+                      setCredentials({
+                        email: e.detail.value!,
+                        password: credentials.password,
+                      })
+                    }
+                  />
+                </IonItem>
+                <IonItem className="input-container">
+                  <IonInput
+                    className="input"
+                    type="password"
+                    value={credentials.password}
+                    placeholder="Enter password"
+                    required
+                    onIonChange={(e) =>
+                      setCredentials({
+                        email: credentials.email,
+                        password: e.detail.value!,
+                      })
+                    }
+                  />
+                </IonItem>
+                <IonItem>
+                  <button
+                    className="loginBtn"
+                    color="primary"
+                    onClick={() => submitForm()}
+                  >
+                    Login
+                  </button>
+                </IonItem>
+              </IonCardContent>
+            </IonCard>
+          </>
         )}
       </IonContent>
     </IonPage>

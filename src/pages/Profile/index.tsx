@@ -20,7 +20,7 @@ const Profile: React.FC = () => {
 
   const { authAxios } = useAxios();
   const { userData } = useAuth();
-  const { isLoading, error, data, isFetching,  } = useQuery(["user",userData?.user.userId], () => authAxios.get<UserModel>(`User/${userData?.user.userId}`));
+  const { data, isFetching,  } = useQuery(["user",userData?.user.userId], () => authAxios.get<UserModel>(`User/${userData?.user.userId}`));
   return (
     <IonPage>
       <IonHeader className="header">

@@ -2,14 +2,13 @@ import { useEffect } from "react";
 import { useAuth } from "../../hooks/Auth.hooks";
 
 const Logout = () => {
+  const { logout } = useAuth();
 
-    const { logout } = useAuth();
+  useEffect(() => {
+    logout();
+  });
 
-    useEffect(() => {
-        logout();
-    })
-
-    return <></>
-}
+  return <></>;
+};
 
 export default Logout;
