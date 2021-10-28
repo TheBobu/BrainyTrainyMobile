@@ -1,4 +1,53 @@
-.leaderboard-slides{
+.leaderboard-slides {
     display: block;
     height: 100%;
+}
+
+.leaderboard-slide{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.leaderboard-table {
+    border-collapse: separate; 
+    border-radius: 0.5em;
+}
+
+.leaderboard-card {
+    width: 100%;
+    max-height: 81%;
+}
+
+.card .leaderboard-card-block {
+    padding: 0px;
+    height: 81%;
+}
+
+.tableFixHead {
+    overflow-y: auto;
+    height: 31em;
+}
+
+.tableFixHead thead{
+    top: 0;
+    position: sticky;
+    border-collapse: separate; 
+    border-radius: 0.5em;
+    background-color: #007bff;
+}
+.tableFixHead thead th:first-child{
+    top: 0;
+    position: sticky;
+    border-collapse: separate; 
+    border-radius: 0.5em 0em 0em 0em;
+}
+.tableFixHead thead th:last-child{
+    top: 0;
+    position: sticky;
+    border-collapse: separate; 
+    border-radius: 0em 0.5em 0em 0em;
+}
+
+.tableFixHead tbody{
+    overflow: hidden;
 }
