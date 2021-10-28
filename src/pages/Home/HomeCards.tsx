@@ -6,7 +6,7 @@ import {
   IonIcon,
   IonRow,
 } from "@ionic/react";
-import { extensionPuzzleOutline, gridOutline, helpOutline, listOutline, personOutline, shapesOutline } from "ionicons/icons";
+import { extensionPuzzleOutline, gridOutline, helpOutline, listOutline, personOutline, shapesOutline, statsChartOutline } from "ionicons/icons";
 
 const HomeCards: React.FC = () => (
   <IonContent >
@@ -45,10 +45,12 @@ const HomeCards: React.FC = () => (
       </IonRow>
       <IonRow>
         <IonCol >
+          <a href='/stats'>
           <IonCard className="homeCard-blue text-white">
-            <IonIcon className="pr-1 " icon={gridOutline} />
-            <p>SUDOKU </p>
+            <IonIcon className="pr-1 " icon={statsChartOutline} />
+            <p>STATS</p>
           </IonCard>
+          </a>
         </IonCol>
         <IonCol>
           <a href='todolist'>
