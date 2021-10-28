@@ -5,9 +5,9 @@ import {
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip
+    Tooltip,
+    ResponsiveContainer
 } from "recharts";
-
 type Props = {
     chartDataScore: { name: string, score: number }[],
     chartDataTime: { name: string, time: number }[],
@@ -16,7 +16,7 @@ type Props = {
 
 const StatsCharts: React.FC<Props> = (props) => {
     return (
-        <>
+        <div className="chart-wrapper">
             <h1>{props.title}</h1>
             <h2>Score</h2>
             <AreaChart
@@ -54,7 +54,7 @@ const StatsCharts: React.FC<Props> = (props) => {
                 <Tooltip />
                 <Area type="monotone" dataKey="time" label="time(sec)" stroke="#8884d8" fill="#4099ff" />
             </AreaChart>
-        </>
+        </div>
     )
 }
 

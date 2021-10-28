@@ -21,7 +21,7 @@ const StatsComponent: React.FC = () => {
 
     const slides = data?.data.map((item, key) => {
         let dates = item.records.map((item) => {
-            return new Date(item.addedDate).getDate()+"/"+new Date(item.addedDate).getMonth()
+            return new Date(item.addedDate).getDate() + "/" + new Date(item.addedDate).getMonth()
         })
         var unique = dates.filter((v, i, a) => a.indexOf(v) === i);
 
@@ -68,11 +68,9 @@ const StatsComponent: React.FC = () => {
     return (
         <>
             {isFetching ? <FullscreenSpinner /> :
-                <div className="chart-wrapper">
-                    <IonSlides pager={true} className="slides">
-                        {slides}
-                    </IonSlides>
-                </div>
+                <IonSlides pager={true} className="slides">
+                    {slides}
+                </IonSlides>
             }
         </>
     )
