@@ -50,20 +50,20 @@ const Quiz: React.FC = () => {
   return (
     <div className="app">
       {showScore ? (
-        <div className="score-section">
+        <div className="scoreSection">
           You scored {score} out of {questions.length}
         </div>
       ) : (
         <>
-          <div className="question-section  text-white">
-            <div className="question-count   text-right text-white">
+          <div className="questionSection  textWhite">
+            <div className="questionCount   textRight textWhite">
               <span>Question {currentQuestion + 1}</span>/{questions.length}
             </div>
-            <div className="question-text text-white text-center">
+            <div className="questionText textWhite textCenter">
               {questions[currentQuestion].questionText}
             </div>
           </div>
-          <div className="answer-section text-white text-center">
+          <div className="answerSection textWhite textCenter">
             {questions[currentQuestion].answerOptions.map((answerOption) => (
               <button
                 onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}

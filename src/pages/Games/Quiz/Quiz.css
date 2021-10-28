@@ -1,31 +1,30 @@
-.score-section {
+.scoreSection {
   font-size: 30px;
   align-items: center;
   color: #fafafa;
 }
 
 /* QUESTION/TIMER/LEFT SECTION */
-.question-section {
+.questionSection {
   width: 100%;
   position: relative;
 }
 
-.question-count {
+.questionCount {
   margin-bottom: 20px;
 }
 
-.question-count span {
+.questionCount span {
   font-size: 28px;
 }
 
-.question-text {
+.questionText {
   font-size: 2em;
   margin-bottom: 10%;
 }
 
-
 /* ANSWERS/RIGHT SECTION */
-.answer-section {
+.answerSection {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -50,4 +49,3 @@ button:hover {
 button:focus {
   outline: none;
 }
-
