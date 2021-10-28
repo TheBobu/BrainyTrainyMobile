@@ -1,38 +1,52 @@
+import { IonSlide, IonSlides } from '@ionic/react';
 import React from 'react'
 import { useQuery } from 'react-query';
 import FullscreenSpinner from '../../components/FullscreenSpinner';
 import { useAxios } from '../../context/AxiosContext';
 import { useAuth } from '../../hooks/Auth.hooks';
-
+import './leaderboard.css'
 const LeaderboardComponent: React.FC = () => {
 
     const { authAxios } = useAxios();
     const { userData } = useAuth();
     const { data, isFetching } = useQuery(
         ["leaderboard", userData?.user.userId],
-        () => authAxios.get<UserScore[]>("GameHistory/Leaderboard")
+        () => authAxios.get<Leaderboard[]>("GameHistory/Leaderboard")
     );
 
     const leaderboard = data?.data.map((item, key) => {
+        const userScores = item.userScores.map((score, key) => {
+            return <li key={key}>{score.fullName + " " + score.score + " " + score.timeCompleted.minutes + ":" + score.timeCompleted.seconds}</li>
+        })
         return (
-            <li key={key}>
-                {"Name: " + item.fullName + ", Score:" + item.score + ", Time Completed:" + item.timeCompleted.minutes + ":" + item.timeCompleted.seconds}
-            </li>
+            <IonSlide key={key}>
+                <h2>{item.game}</h2>
+                <div>
+                    <ul>
+                        {userScores}
+                    </ul>
+                </div>
+            </IonSlide>
         )
     })
 
     return (
         <>
             {isFetching ? <FullscreenSpinner /> :
-                <ol>
+                <IonSlides pager={true} className="leaderboard-slides">
                     {leaderboard}
-                </ol>
+                </IonSlides>
             }
         </>
     )
 }
 
 export default LeaderboardComponent;
+
+interface Leaderboard {
+    game: string,
+    userScores: UserScore[]
+}
 
 interface UserScore {
     fullName: string,
