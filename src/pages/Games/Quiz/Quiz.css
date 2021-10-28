@@ -49,3 +49,8 @@ button:hover {
 button:focus {
   outline: none;
 }
+.rightAnswers span{
+  display:grid;
+  font-size:2em;
+
+}

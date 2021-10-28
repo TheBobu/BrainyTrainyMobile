@@ -1,3 +1,4 @@
+import { IonCard, IonCardContent } from "@ionic/react";
 import { useState } from "react";
 import "./Quiz.css";
 const Quiz: React.FC = () => {
@@ -35,6 +36,14 @@ const Quiz: React.FC = () => {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
 
+  const rightAnswers = questions.map((question, key) => {
+    return (
+      <span key={key} className="text-center text-white">
+        {key + 1} :{" "}
+        {question.answerOptions.find((item) => item.isCorrect)?.answerText}
+      </span>
+    );
+  });
   const handleAnswerOptionClick = (isCorrect: any) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -50,27 +59,40 @@ const Quiz: React.FC = () => {
   return (
     <div className="app">
       {showScore ? (
-        <div className="scoreSection">
-          You scored {score} out of {questions.length}
-        </div>
+        <>
+          <IonCard>
+            <IonCardContent>
+              <div className="scoreSection text-center">
+                You scored {score} out of {questions.length}
+              </div>
+              <div className="rightAnswers">{rightAnswers}</div>
+              {console.log(rightAnswers)}
+            </IonCardContent>
+          </IonCard>
+        </>
       ) : (
         <>
-          <div className="questionSection  textWhite">
-            <div className="questionCount   textRight textWhite">
+          <div className="questionSection  text-white">
+            <div className="questionCount  text-right text-white">
               <span>Question {currentQuestion + 1}</span>/{questions.length}
             </div>
             <div className="questionText textWhite textCenter">
               {questions[currentQuestion].questionText}
             </div>
           </div>
-          <div className="answerSection textWhite textCenter">
-            {questions[currentQuestion].answerOptions.map((answerOption) => (
-              <button
-                onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-              >
-                {answerOption.answerText}
-              </button>
-            ))}
+          <div className="answerSection text-white text-center">
+            {questions[currentQuestion].answerOptions.map(
+              (answerOption, key) => (
+                <button
+                  onClick={() =>
+                    handleAnswerOptionClick(answerOption.isCorrect)
+                  }
+                  key={key}
+                >
+                  {answerOption.answerText}
+                </button>
+              )
+            )}
           </div>
         </>
       )}
