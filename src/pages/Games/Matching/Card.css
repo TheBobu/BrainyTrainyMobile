@@ -11,8 +11,10 @@
 
 .card img {
     margin-top: 2em;
-    width: 95%;
+    width: 85%;
     height: auto;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
 }
 
 .card-face {
