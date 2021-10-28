@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Card, { CardType } from './Card';
-import cover from "./images/cover.png";
 import whiteflower from './images/whiteflower.png'
 import purple from './images/purple.png'
 import pinkrose from './images/pinkrose.png'
 import pink from './images/pink.png'
 import magenta from './images/magenta.png'
 import bluerose from './images/bluerose.png'
+import sunflower from './images/sunflower.png'
+import yellowtulip from './images/yellowtulip.png'
 import { IonButton, useIonToast } from '@ionic/react';
 const shuffleCards = (array: CardType[]) => {
     const length = array.length;
@@ -46,6 +47,14 @@ const MatchingGame: React.FC = () => {
         {
             type: "bluerose",
             image: bluerose
+        },
+        {
+            type: "sunflower",
+            image: sunflower
+        },
+        {
+            type: "yellowtulip",
+            image: yellowtulip
         }
     ]
 

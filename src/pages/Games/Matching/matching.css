@@ -2,13 +2,12 @@
     padding: 3px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
     justify-items: center;
     align-items: stretch;
     gap: 2px;
     margin: 0 auto;
-    width: 98%px;
-    height: 500px;
+    width: 98%;
+    height: 80%;
     perspective: 100%;
-    max-width: 720px;
 }
