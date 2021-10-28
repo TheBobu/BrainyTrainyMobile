@@ -1,26 +1,26 @@
-.ToDo-date {
-    display: flex;
-    flex-direction: column;
-    width: 5.5rem;
-    height: 5.5rem;
-    border: 1px solid #ececec;
-    background-color: #2a2a2a;
-    color: white;
-    border-radius: 12px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .ToDo-date__month {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .ToDo-date__year {
-    font-size: 1rem;
-  }
-  
-  .ToDo-date__day {
-    font-size: 1rem;
-    font-weight: bold;
-  }
+.ToDoDate {
+  display: flex;
+  flex-direction: column;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid #ececec;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ToDoDateMonth {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.ToDoDateYear {
+  font-size: 1rem;
+}
+
+.ToDoDateDay {
+  font-size: 1rem;
+  font-weight: bold;
+}
