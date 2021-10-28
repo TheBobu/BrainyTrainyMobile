@@ -21,7 +21,7 @@ const StatsComponent: React.FC = () => {
 
     const slides = data?.data.map((item, key) => {
         let dates = item.records.map((item) => {
-            return new Date(item.addedDate).getDate() + "/" + new Date(item.addedDate).getMonth()
+            return new Date(item.addedDate).getDate() + "/" + (new Date(item.addedDate).getMonth() < 10 ? "0" + new Date(item.addedDate).getMonth() : new Date(item.addedDate).getMonth())
         })
         var unique = dates.filter((v, i, a) => a.indexOf(v) === i);
 

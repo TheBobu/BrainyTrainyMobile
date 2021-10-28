@@ -30,9 +30,9 @@ const StatsCharts: React.FC<Props> = (props) => {
                     bottom: 0
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <CartesianGrid strokeDasharray="2 1" />
+                <XAxis dataKey="name" tickMargin={10}/>
+                <YAxis tickMargin={10}/>
                 <Tooltip />
                 <Area type="monotone" dataKey="score" stroke="#8884d8" fill="#4099ff" />
             </AreaChart>
@@ -48,9 +48,9 @@ const StatsCharts: React.FC<Props> = (props) => {
                     bottom: 0
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <CartesianGrid strokeDasharray="2 1" />
+                <XAxis dataKey="name" tickMargin={10}/>
+                <YAxis tickMargin={10}/>
                 <Tooltip />
                 <Area type="monotone" dataKey="time" label="time(sec)" stroke="#8884d8" fill="#4099ff" />
             </AreaChart>
