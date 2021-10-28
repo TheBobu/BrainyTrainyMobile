@@ -35,10 +35,10 @@ const Card = ({
       onClick={handleClick}
     >
       <div className="card-face card-font-face">
-        <img src={cover} alt="pokeball" />
+        <img src={cover} className="image" alt="cover" />
       </div>
       <div className="card-face card-back-face">
-        <img src={card.image} alt={card.type} />
+        <img className="image" src={card.image} alt={card.type} />
       </div>
     </div>
   );

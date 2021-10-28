@@ -9,8 +9,8 @@
     margin-top: 0px;
 }
 
-.card img {
-    margin-top: 2em;
+.card .image {
+    margin-top: 1.8em;
     width: 85%;
     height: auto;
     margin-left: 7.5%;

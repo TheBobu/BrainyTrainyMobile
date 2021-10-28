@@ -16,10 +16,11 @@
     font-size: 7em;
 }
 
-p{
-font-size: 0.2em! important;
-}
-
 .hydrated{
     margin:0px !important;
+}
+
+.home-text{
+    font-size: 0.2em !important;
+    margin-top: 0;
 }

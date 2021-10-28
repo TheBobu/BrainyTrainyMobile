@@ -6,7 +6,7 @@ import {
   IonIcon,
   IonRow,
 } from "@ionic/react";
-import { helpOutline, listOutline, personOutline, podiumOutline, shapesOutline, statsChartOutline } from "ionicons/icons";
+import { extensionPuzzleOutline, gridOutline, helpOutline, listOutline, personOutline, podiumOutline, shapesOutline, statsChartOutline } from "ionicons/icons";
 
 const HomeCards: React.FC = () => (
   <IonContent >
@@ -16,7 +16,7 @@ const HomeCards: React.FC = () => (
           <a href='/profile'>
             <IonCard className="homeCard-blue text-white">
               <IonIcon className="pr-1 " icon={personOutline} />
-              <p>PROFILE</p>
+              <p className="home-text">PROFILE</p>
             </IonCard>
           </a>
         </IonCol>
@@ -24,7 +24,7 @@ const HomeCards: React.FC = () => (
           <a href='/matching'>
             <IonCard className="homeCard-white text-dark">
               <IonIcon className="pr-1" icon={shapesOutline} />
-              <p>MATCHING</p>
+              <p className="home-text">MATCHING</p>
             </IonCard>
           </a>
         </IonCol>
@@ -34,7 +34,7 @@ const HomeCards: React.FC = () => (
           <a href='/quiz'>
             <IonCard className="homeCard-white text-dark">
               <IonIcon className="pr-1 text-dark" icon={helpOutline} />
-              <p>QUIZ</p>
+              <p className="home-text">QUIZ</p>
             </IonCard>
           </a>
         </IonCol>
@@ -42,7 +42,7 @@ const HomeCards: React.FC = () => (
           <a href='/todolist'>
             <IonCard className="homeCard-blue text-white">
               <IonIcon className="pr-3 " icon={listOutline} />
-              <p>TO DO LIST</p>
+              <p className="home-text">TO DO LIST</p>
             </IonCard>
           </a>
         </IonCol>
@@ -52,7 +52,7 @@ const HomeCards: React.FC = () => (
           <a href='/stats'>
             <IonCard className="homeCard-blue text-white">
               <IonIcon className="pr-1 " icon={statsChartOutline} />
-              <p>STATS</p>
+              <p className="home-text">STATS</p>
             </IonCard>
           </a>
         </IonCol>
@@ -60,7 +60,7 @@ const HomeCards: React.FC = () => (
           <a href='leaderboard'>
             <IonCard className="homeCard-white text-dark">
               <IonIcon className="pr-1" icon={podiumOutline} />
-              <p>LEADERBOARD</p>
+              <p className="home-text">LEADERBOARD</p>
             </IonCard>
           </a>
         </IonCol>

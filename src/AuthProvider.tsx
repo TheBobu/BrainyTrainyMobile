@@ -43,23 +43,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     }
   );
 
-  /* const login = React.useCallback(
-        async (formData: LoginModel) => {
-            axios
-                .post(`${process.env.REACT_APP_BASE_URL}/Account/Login`, formData)
-                .then((result) => {
-                    setUserData(result.data as UserContextModel);
-                    setIsAuthenticated(true);
-                })
-                .catch((error: AxiosError) => {
-                    console.error({
-                        message: `Something went wrong! ${error.code}` 
-                    });
-                });
-        },
-        [setIsAuthenticated, setUserData]
-    ); */
-
   const logout = React.useCallback(async () => {
     setUserData({} as UserContextModel);
     setIsAuthenticated(false);
