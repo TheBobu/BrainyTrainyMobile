@@ -20,6 +20,7 @@ import Matching from './pages/Games/Matching';
 import TodoList from './pages/TodoList';
 import Stats from './pages/Stats';
 import Quiz from './pages/Games/Quiz/Quiz';
+import Leaderboard from './pages/Leaderboard';
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
@@ -29,6 +30,9 @@ const AppRoutes: React.FC = () => {
                 <IonRouterOutlet>
                     <Route exact path="/home">
                         {isAuthenticated ? <Home /> : <Redirect to="/login" />}
+                    </Route>
+                    <Route exact path="/leaderboard">
+                        {isAuthenticated ? <Leaderboard /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/todolist">
                         {isAuthenticated ? <TodoList /> : <Redirect to="/login" />}
@@ -52,7 +56,7 @@ const AppRoutes: React.FC = () => {
                         {!isAuthenticated ? <Register /> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/logout">
-                        {isAuthenticated ? <Logout />: <Redirect to="/" />}
+                        {isAuthenticated ? <Logout /> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/">
                         <Redirect to="/home" />

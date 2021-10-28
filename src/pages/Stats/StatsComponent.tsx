@@ -43,7 +43,6 @@ const StatsComponent: React.FC = () => {
                 }
             }
         }
-        console.log(item.records)
 
         return (
             <IonSlide className="slides" key={key}>
