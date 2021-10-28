@@ -31,10 +31,12 @@ const HomeCards: React.FC = () => (
       </IonRow>
       <IonRow>
         <IonCol >
+        <a href='/quiz'>
           <IonCard className="homeCard-white text-dark">
             <IonIcon className="pr-1 text-dark" icon={helpOutline} />
             <p>QUIZ </p>
           </IonCard>
+          </a>
         </IonCol>
         <IonCol >
           <IonCard className="homeCard-blue text-white">
