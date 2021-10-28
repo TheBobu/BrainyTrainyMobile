@@ -19,6 +19,7 @@ import Logout from './pages/Auth/Logout';
 import Matching from './pages/Games/Matching';
 import TodoList from './pages/TodoList';
 import Stats from './pages/Stats';
+import Quiz from './pages/Games/Quiz/Quiz';
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
@@ -40,6 +41,9 @@ const AppRoutes: React.FC = () => {
                     </Route>
                     <Route exact path="/matching">
                         {isAuthenticated ? <Matching /> : <Redirect to="/login" />}
+                    </Route>
+                    <Route exact path="/quiz">
+                        {!isAuthenticated ? <Quiz /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/login">
                         {!isAuthenticated ? <Login /> : <Redirect to="/" />}

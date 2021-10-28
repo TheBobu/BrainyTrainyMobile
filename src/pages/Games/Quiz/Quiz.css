@@ -1,0 +1,51 @@
+.scoreSection {
+  font-size: 30px;
+  align-items: center;
+  color: #fafafa;
+}
+
+/* QUESTION/TIMER/LEFT SECTION */
+.questionSection {
+  width: 100%;
+  position: relative;
+}
+
+.questionCount {
+  margin-bottom: 20px;
+}
+
+.questionCount span {
+  font-size: 28px;
+}
+
+.questionText {
+  font-size: 2em;
+  margin-bottom: 10%;
+}
+
+/* ANSWERS/RIGHT SECTION */
+.answerSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  font-size: 2em;
+  color: #ffffff;
+  background-color: #2c365c;
+  border-radius: 15px;
+  padding: 15px;
+  border: 5px solid #4099ff;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #555e7d;
+}
+
+button:focus {
+  outline: none;
+}

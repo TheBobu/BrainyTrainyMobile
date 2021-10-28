@@ -1,8 +1,7 @@
 import React from "react";
 import Chart from "../Chart";
 
-
-const ToDoChart = (props:any) => {
+const ToDoChart = (props: any) => {
   const chartDataPoints = [
     { label: "Jan", value: 0 },
     { label: "Feb", value: 0 },
