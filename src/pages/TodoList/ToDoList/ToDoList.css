@@ -1,9 +1,9 @@
-.toDos-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .toDos-list__fallback {
-    color: #fafafa;
-    text-align: center;
-  }
+.toDosList {
+  list-style: none;
+  padding: 0;
+}
+
+.toDosListFallback {
+  color: #fafafa;
+  text-align: center;
+}

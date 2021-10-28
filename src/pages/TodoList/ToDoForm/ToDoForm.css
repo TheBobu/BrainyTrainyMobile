@@ -1,26 +1,26 @@
-.new-toDo__controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  .new-toDo__control label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  
-  .new-toDo__control input {
-    font: inherit;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
-  }
-  
-  .new-toDo__actions {
-    text-align: right;
-  }
+.newToDoControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.newToDoControl label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.newToDoControl input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.newToDoActions {
+  text-align: right;
+}

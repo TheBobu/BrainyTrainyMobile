@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import './ToDoForm.css';
+import "./ToDoForm.css";
 
-const ToDoForm = (props:any) => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+const ToDoForm = (props: any) => {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  const titleChangeHandler = (event:any) => {
+  const titleChangeHandler = (event: any) => {
     setEnteredTitle(event.target.value);
   };
 
-  const dateChangeHandler = (event:any) => {
+  const dateChangeHandler = (event: any) => {
     setEnteredDate(event.target.value);
   };
 
-  const submitHandler = (event:any) => {
+  const submitHandler = (event: any) => {
     event.preventDefault();
 
     const toDoData = {
@@ -23,34 +23,34 @@ const ToDoForm = (props:any) => {
     };
 
     props.onSaveToDoData(toDoData);
-    setEnteredTitle('');
-    setEnteredDate('');
+    setEnteredTitle("");
+    setEnteredDate("");
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <div className='new-toDo__controls'>
-        <div className='new-toDo__control'>
+      <div className="newToDoControls">
+        <div className="newToDoControl">
           <label>Title</label>
           <input
-            type='text'
+            type="text"
             value={enteredTitle}
             onChange={titleChangeHandler}
           />
         </div>
-        <div className='new-toDo__control'>
+        <div className="newToDoControl">
           <label>Date</label>
           <input
-            type='date'
-            min='2019-01-01'
-            max='2022-12-31'
+            type="date"
+            min="2019-01-01"
+            max="2022-12-31"
             value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
       </div>
-      <div className='new-toDo__actions'>
-        <button type='submit'>Add ToDo</button>
+      <div className="newToDoActions">
+        <button type="submit">Add ToDo</button>
       </div>
     </form>
   );
