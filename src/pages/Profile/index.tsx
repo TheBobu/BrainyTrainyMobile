@@ -44,9 +44,6 @@ const Profile: React.FC = () => {
                     </div>
                     <h3 className="f-w-600 m-t-25 m-b-10">{data?.data.info.fullName}</h3>
                     <p className="text-muted">Age: {data?.data.info.age}</p>
-                    {/* <div className="row">
-                  <IonIcon className="pr-1" icon={homeOutline} /><p className="text-muted"> Address:</p>
-                  </div> */}
                     <div className="bg-blue">
                       <p className="">
                         Lorem Ipsum is simply dummy text of the printing and
