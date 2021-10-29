@@ -96,10 +96,12 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="row justify-content-center">
-              <button className="button-emergency mt-3 mb-3 btn btn-lg">
-                <IonIcon icon={callOutline} className="iconProfile pr-1" />
-                Help
-              </button>
+              <a href={`tel:${data?.data.info.contactPersonNumber}`}>
+                <button className="button-emergency mt-3 mb-3 btn btn-lg">
+                  <IonIcon icon={callOutline} className="iconProfile pr-1" />
+                  Help
+                </button>
+              </a>
             </div>
           </div>
         }
